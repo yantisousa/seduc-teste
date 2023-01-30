@@ -45,7 +45,7 @@ class LivrosController extends Controller
             'titulo' => $request->titulo,
             'ano' => $request->ano
         ]);
-        return view('index', compact('livros', 'alunos'));
+        return redirect()->route('alunos.index', compact('livros', 'alunos'));
    }
 
     /**

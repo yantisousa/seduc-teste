@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('livros', function (Blueprint $table) {
+        Schema::create('professores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_aluno')->constrained('alunos')->onDelete('cascade');
-            $table->string('titulo', 255);
-            $table->integer('ano');
+            $table->string('id_turmas');
+            $table->string('name');
+            $table->date('data');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('professores');
     }
 };

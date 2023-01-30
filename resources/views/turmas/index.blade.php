@@ -25,6 +25,7 @@
     </style>
 
     <body>
+        <h1 style="text-align: center;">Turmas</h1>
         <div class="container text-center">
             <div class="row align-items-center">
                 <div class="col">
@@ -32,36 +33,33 @@
                     <table class="table" sty>
                         <thead>
                             <tr>
-                                <th scope="col-3">ID</th>
                                 <th scope="col-3">Nome</th>
-                                <th scope="col-3">Data de Nascimento</th>
-                                <th scope=""></th>
+                                <th scope="col-3">Opções</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($alunos as $aluno)
+                            @forelse ($turmas as $turma)
                                 <tr id="linha">
                                     <input type="hidden" value="0" id="delete">
-                                    <th scope="row" id="teste">{{ $aluno->id }}</th>
-                                    <td>{{ $aluno->nome }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($aluno->data_nascimento)) }}</td>
-                                    <td><button class="btn btn-danger" onclick="excluir({{ $aluno->id }})"
+                                    <td>{{ $turma->turma }}</td>
+                                    <td><button class="btn btn-primary">Dados da turma</button></td>
+                                    {{-- <td><button class="btn btn-danger" onclick="excluir({{ $turma->id }})"
                                             id="excluir">Deletar</button>
                                     </td>
                                     <td>
-                                        <form action="{{ route('livros.show', $aluno->id) }}" method="get">
+                                        <form action="{{ route('livros.show', $turma->id) }}" method="get">
                                             <button type="submit" class="btn btn-primary">cadastrar livro</button>
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="{{ route('livros.index', $aluno->id) }}" method="get">
-                                            <button type="submit" id="excluir" class="btn btn-info">Ver livros do aluno</button>
+                                        <form action="{{ route('livros.index', $turma->id) }}" method="get">
+                                            <button type="submit" id="excluir" class="btn btn-info">Ver livros do turma</button>
                                         </form>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @empty
                                 <h6>não tem registros</h6>
-                                <button class="btn btn-primary"><a href="{{ route('alunos.create') }}">Criar Alunos</a></button>
+                                <button class="btn btn-primary"><a href="{{ route('turmas.create') }}">Criar turmas</a></button>
                             @endforelse
                         </tbody>
                     </table>

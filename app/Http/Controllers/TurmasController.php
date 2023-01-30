@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alunos;
+use App\Models\Turmas;
 use Illuminate\Http\Request;
 
-class AlunosController extends Controller
+class TurmasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AlunosController extends Controller
      */
     public function index()
     {
-        $alunos = Alunos::get();
-        return view('index', compact('alunos'));
+        $turmas = Turmas::get();
+        return view('turmas.index', compact('turmas'));
     }
 
     /**
@@ -25,7 +25,6 @@ class AlunosController extends Controller
      */
     public function create()
     {
-        return view('create');
         //
     }
 
@@ -37,8 +36,7 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-         Alunos::create($request->all());
-        return to_route('alunos.index');
+        //
     }
 
     /**
@@ -49,7 +47,7 @@ class AlunosController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -83,6 +81,6 @@ class AlunosController extends Controller
      */
     public function destroy($id)
     {
-        $dados = Alunos::find($id)->delete();
+        //
     }
 }
